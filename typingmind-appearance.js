@@ -36,6 +36,16 @@
       line-height: 1.65 !important;
     }
 
+    /* Muted palette. Same hue throughout, saturation dropped.
+       Raise the middle percentage in any line for more colour. */
+    body {
+      --brand-color: hsl(212deg 22% 40%) !important;
+      --sidebar-color: hsl(212deg 14% 6%) !important;
+      --sidebar-menu-color: hsl(212deg 12% 17%) !important;
+      --popup-color: hsl(212deg 13% 20%) !important;
+      --workspace-color: hsl(212deg 10% 18%) !important;
+    }
+
     /* Right-align the user's own messages */
     [data-element-id="response-block"]:has([data-element-id="user-message"]) {
       padding-left: 0.5rem !important;
