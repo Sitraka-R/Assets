@@ -35,6 +35,21 @@
       font-size: 1rem !important;
       line-height: 1.65 !important;
     }
+
+    /* Right-align the user's own messages */
+    [data-element-id="response-block"]:has([data-element-id="user-message"]) {
+      padding-left: 0.5rem !important;
+      padding-right: 3rem !important;
+    }
+
+    [data-element-id="response-block"]:has([data-element-id="user-message"]) [data-element-id="chat-avatar-container"] {
+      left: auto !important;
+      right: 0.5rem !important;
+    }
+
+    [data-element-id="response-block"]:has([data-element-id="user-message"]) .flex.flex-col {
+      align-items: flex-end !important;
+    }
   `;
 
   const style = document.createElement('style');
