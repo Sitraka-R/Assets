@@ -36,14 +36,28 @@
       line-height: 1.65 !important;
     }
 
-    /* Muted palette. Same hue throughout, saturation dropped.
-       Raise the middle percentage in any line for more colour. */
+    /* Muted palette.
+       TypingMind colours come from two places: CSS variables, and
+       Tailwind slate classes applied directly. Both are handled below. */
     body {
       --brand-color: hsl(212deg 22% 40%) !important;
-      --sidebar-color: hsl(212deg 14% 6%) !important;
-      --sidebar-menu-color: hsl(212deg 12% 17%) !important;
-      --popup-color: hsl(212deg 13% 20%) !important;
-      --workspace-color: hsl(212deg 10% 18%) !important;
+      --sidebar-color: hsl(212deg 12% 7%) !important;
+      --sidebar-menu-color: hsl(212deg 10% 17%) !important;
+      --popup-color: hsl(212deg 10% 20%) !important;
+      --workspace-color: hsl(212deg 8% 18%) !important;
+      --main-dark-color: #17181b !important;
+      --main-dark-popup-color: #1e2024 !important;
+    }
+
+    /* Neutral greys in place of Tailwind's blue-tinted slate */
+    html.dark [class*="bg-slate-950"] {
+      background-color: #131417 !important;
+    }
+    html.dark [class*="bg-slate-900"] {
+      background-color: #1a1b1f !important;
+    }
+    html.dark [class*="bg-slate-800"] {
+      background-color: #23252a !important;
     }
 
     /* Right-align the user's own messages */
