@@ -62,12 +62,27 @@
 
     /* Muted blues for buttons and active toggles.
        Raise the 28% for more colour, lower it for greyer. */
+    html.dark [class*="bg-blue-400"],
     html.dark [class*="bg-blue-500"],
     html.dark [class*="bg-blue-600"],
     html.dark [class*="bg-blue-700"],
+    html.dark [class*="bg-blue-800"],
     html.dark [class*="bg-indigo-500"],
     html.dark [class*="bg-indigo-600"] {
       background-color: hsl(212deg 28% 38%) !important;
+    }
+
+    /* Icon colour inside those buttons */
+    html.dark [class*="text-blue-200"],
+    html.dark [class*="text-blue-600"] {
+      color: #c8d2dd !important;
+    }
+
+    /* Scroll hint gradient. Its baked-in colour no longer matches
+       the backgrounds above, so it shows as a patch. */
+    .scroll-indicator-gradient::after,
+    .scroll-indicator-gradient::before {
+      display: none !important;
     }
 
     /* Same treatment for coloured borders and rings on active states */
