@@ -146,6 +146,22 @@
     [data-element-id="response-block"]:has([data-element-id="user-message"]) .flex.flex-col {
       align-items: flex-end !important;
     }
+
+    /* Attachments sit in sibling containers rather than inside the message
+       bubble, so the align-items rule above never reaches them. Push any
+       container that directly holds an image or attachment card to the right.
+       Scoped with :has(> img) so nothing else in the block is affected. */
+    [data-element-id="response-block"]:has([data-element-id="user-message"])
+      :is(div, .flex, .grid):has(> img, > button > img, > a > img) {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      justify-content: flex-end !important;
+    }
+
+    [data-element-id="response-block"]:has([data-element-id="user-message"]) img {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+    }
   `;
 
   const style = document.createElement('style');
