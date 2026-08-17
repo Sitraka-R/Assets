@@ -19,15 +19,15 @@
 
     /* User message: neutral bubble instead of brand blue */
     [data-element-id="user-message"] {
-      background: rgba(0, 0, 0, 0.045) !important;
+      background: hsl(212deg 16% 92%) !important;
       color: #1a1a1a !important;
       font-size: 1rem !important;
       line-height: 1.65 !important;
     }
 
     html.dark [data-element-id="user-message"] {
-      background: rgba(255, 255, 255, 0.055) !important;
-      color: #e6e6e4 !important;
+      background: hsl(212deg 16% 19%) !important;
+      color: #e2e5e9 !important;
     }
 
     /* AI response: match the size, leave the background alone */
@@ -40,24 +40,25 @@
        TypingMind colours come from two places: CSS variables, and
        Tailwind slate classes applied directly. Both are handled below. */
     body {
-      --brand-color: hsl(212deg 22% 40%) !important;
-      --sidebar-color: hsl(212deg 12% 7%) !important;
-      --sidebar-menu-color: hsl(212deg 10% 17%) !important;
-      --popup-color: hsl(212deg 10% 20%) !important;
-      --workspace-color: hsl(212deg 8% 18%) !important;
-      --main-dark-color: #17181b !important;
-      --main-dark-popup-color: #1e2024 !important;
+      --brand-color: hsl(212deg 26% 40%) !important;
+      --sidebar-color: hsl(212deg 18% 8%) !important;
+      --sidebar-menu-color: hsl(212deg 16% 17%) !important;
+      --popup-color: hsl(212deg 16% 20%) !important;
+      --workspace-color: hsl(212deg 15% 18%) !important;
+      --main-dark-color: hsl(212deg 15% 11%) !important;
+      --main-dark-popup-color: hsl(212deg 14% 15%) !important;
     }
 
-    /* Neutral greys in place of Tailwind's blue-tinted slate */
+    /* Muted versions of Tailwind's slate, hue kept, saturation reduced.
+       Raise the middle percentage in any line for more blue. */
     html.dark [class*="bg-slate-950"] {
-      background-color: #131417 !important;
+      background-color: hsl(212deg 18% 9%) !important;
     }
     html.dark [class*="bg-slate-900"] {
-      background-color: #1a1b1f !important;
+      background-color: hsl(212deg 16% 13%) !important;
     }
     html.dark [class*="bg-slate-800"] {
-      background-color: #23252a !important;
+      background-color: hsl(212deg 15% 18%) !important;
     }
 
     /* Muted blues for buttons and active toggles.
@@ -85,10 +86,28 @@
       display: none !important;
     }
 
-    /* Same treatment for coloured borders and rings on active states */
-    html.dark [class*="border-blue-500"],
-    html.dark [class*="ring-blue-500"] {
-      border-color: hsl(212deg 28% 42%) !important;
+    /* Focus rings, borders and outlines. Tailwind rings are driven by
+       a CSS variable, so that has to be set rather than border-color. */
+    html.dark [class*="ring-blue"],
+    html.dark [class*="border-blue"],
+    html.dark [class*="outline-blue"],
+    html.dark [class*="ring-indigo"] {
+      --tw-ring-color: hsl(212deg 24% 45%) !important;
+      border-color: hsl(212deg 24% 45%) !important;
+      outline-color: hsl(212deg 24% 45%) !important;
+    }
+
+    html.dark input:focus,
+    html.dark textarea:focus {
+      --tw-ring-color: hsl(212deg 24% 45%) !important;
+      border-color: hsl(212deg 24% 45%) !important;
+    }
+
+    /* Catch remaining blue shades on toggles and switches */
+    html.dark [class*="bg-blue-300"],
+    html.dark [class*="bg-blue-900"],
+    html.dark [aria-checked="true"] {
+      background-color: hsl(212deg 28% 38%) !important;
     }
 
     /* Right-align the user's own messages */
