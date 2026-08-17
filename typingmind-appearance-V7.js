@@ -103,6 +103,18 @@
       border-color: hsl(212deg 24% 45%) !important;
     }
 
+    /* Selected chat in the sidebar. The default is a very faint
+       overlay that the muted palette made almost invisible. */
+    html.dark [data-element-id="selected-chat-item"] {
+      background-color: hsl(212deg 18% 24%) !important;
+      box-shadow: inset 3px 0 0 0 hsl(212deg 38% 52%) !important;
+    }
+
+    [data-element-id="selected-chat-item"] {
+      background-color: hsl(212deg 20% 88%) !important;
+      box-shadow: inset 3px 0 0 0 hsl(212deg 38% 48%) !important;
+    }
+
     /* Sidebar resize handle: transparent until hovered.
        The blue overrides above made it permanently visible. */
     html.dark [class*="cursor-col-resize"] {
