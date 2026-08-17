@@ -103,6 +103,16 @@
       border-color: hsl(212deg 24% 45%) !important;
     }
 
+    /* Sidebar resize handle: transparent until hovered.
+       The blue overrides above made it permanently visible. */
+    html.dark [class*="cursor-col-resize"] {
+      background-color: transparent !important;
+    }
+    html.dark [class*="cursor-col-resize"]:hover,
+    html.dark [class*="cursor-col-resize"]:active {
+      background-color: hsl(212deg 26% 40%) !important;
+    }
+
     /* Catch remaining blue shades on toggles and switches */
     html.dark [class*="bg-blue-300"],
     html.dark [class*="bg-blue-900"],
