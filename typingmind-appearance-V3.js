@@ -60,6 +60,22 @@
       background-color: #23252a !important;
     }
 
+    /* Muted blues for buttons and active toggles.
+       Raise the 28% for more colour, lower it for greyer. */
+    html.dark [class*="bg-blue-500"],
+    html.dark [class*="bg-blue-600"],
+    html.dark [class*="bg-blue-700"],
+    html.dark [class*="bg-indigo-500"],
+    html.dark [class*="bg-indigo-600"] {
+      background-color: hsl(212deg 28% 38%) !important;
+    }
+
+    /* Same treatment for coloured borders and rings on active states */
+    html.dark [class*="border-blue-500"],
+    html.dark [class*="ring-blue-500"] {
+      border-color: hsl(212deg 28% 42%) !important;
+    }
+
     /* Right-align the user's own messages */
     [data-element-id="response-block"]:has([data-element-id="user-message"]) {
       padding-left: 0.5rem !important;
